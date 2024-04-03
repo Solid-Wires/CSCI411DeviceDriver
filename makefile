@@ -9,7 +9,7 @@ directories:
 all: directories program
 
 program:
-	make -C src/nothing.c -o nothing.o
+	make -c src/nothing.c -o nothing.o
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 	
 .PHONY: clean
