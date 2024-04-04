@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <cstring>
 
 int main() 
 {
@@ -12,7 +13,7 @@ int main()
     const char* toWrite = "abcdef";
 
     // Write into that device file
-    ssize_t writeTest = write(file, toWrite, 6);
+    ssize_t writeTest = write(file, toWrite, std::strlen(toWrite));
     char bufStatus[1];
 
     // Read from that device file
