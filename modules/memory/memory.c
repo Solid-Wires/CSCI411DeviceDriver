@@ -127,7 +127,7 @@ ssize_t memory_read(struct file *filp,
 
     /* Changing reading position as best suits */ 
     if (*f_pos == 0) { 
-        *f_pos+=1; 
+        *f_pos += 1; 
         return 1; 
     } else { 
         return 0; 
@@ -144,7 +144,7 @@ ssize_t memory_write(struct file *filp,
                     size_t count, 
                     loff_t *f_pos) {
     char *tmp;
-    tmp=buf+count-1;
+    tmp = (char*)(buf + count - 1);
     copy_from_user(memory_buffer,tmp,1);
     return 1;
 }
