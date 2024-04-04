@@ -1,7 +1,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <string>
 #include <cstring>
+#include <iostream>
 
 int main() 
 {
@@ -10,7 +12,8 @@ int main()
     //  we just want to open something and nothing more. RDWR is explicitly stated here though.
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
-    const char* toWrite = "abcdef";
+    const char* toWrite;
+    std::getline(std::cin, toWrite);
 
     // Write into that device file
     ssize_t writeTest = write(file, toWrite, std::strlen(toWrite));
