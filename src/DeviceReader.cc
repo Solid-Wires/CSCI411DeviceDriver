@@ -1,7 +1,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <iostream>
 
 int main() 
 {
@@ -10,13 +9,8 @@ int main()
     //  we just want to open something and nothing more. RDWR is explicitly stated here though.
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
-    // I've allowed entering anything into the writer
-    std::cout << "Write into the device: ";
-    char toWrite[60];
-    std::cin >> toWrite;
-
     // Write into that device file
-    ssize_t writeTest = write(file, toWrite, 1);
+    ssize_t writeTest = write(file, "abcdef", 1);
     char bufStatus[1];
 
     // Read from that device file
