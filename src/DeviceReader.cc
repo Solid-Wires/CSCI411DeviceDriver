@@ -12,7 +12,7 @@ int main()
 
     // I've allowed entering anything into the writer
     std::cout << "Write into the device: ";
-    char[60] toWrite;
+    char toWrite[60];
     std::cin >> toWrite;
 
     // Write into that device file
