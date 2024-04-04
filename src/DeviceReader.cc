@@ -12,8 +12,7 @@ int main()
     const char* toWrite = "abcdef";
 
     // Write into that device file
-    printf(sizeof(toWrite));
-    ssize_t writeTest = write(file, toWrite, sizeof(toWrite));
+    ssize_t writeTest = write(file, toWrite, 6);
     char bufStatus[1];
 
     // Read from that device file
