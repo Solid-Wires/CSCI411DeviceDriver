@@ -14,6 +14,7 @@ int main()
     std::cout << "Write into the device: ";
     char toWrite[60];
     std::cin >> toWrite;
+    std::cout << endl;
 
     // Write into that device file
     ssize_t writeTest = write(file, toWrite, 1);
