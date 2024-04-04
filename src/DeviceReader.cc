@@ -24,6 +24,7 @@ int main()
 
     // Close the device file
     close(file);
-    std::cout << std::endl; // For some reason, cin is echoing what I'm typing, which is annoying
     printf("%s\n", bufStatus);
+    std::cout << std::endl; // For some reason, cin is echoing what I'm typing, which is annoying
+    cout << "Input: ";
 }
