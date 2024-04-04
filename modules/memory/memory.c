@@ -144,7 +144,7 @@ ssize_t memory_write(struct file *filp,
                     size_t count, 
                     loff_t *f_pos) {
     char *tmp;
-    tmp = (char*)(buf + count - 1);
+    tmp = (char*)(buf + count - 1); /* This had to be casted in order to avoid the warning */
     copy_from_user(memory_buffer,tmp,1);
     return 1;
 }
