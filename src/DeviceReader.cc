@@ -26,5 +26,5 @@ int main()
     close(file);
     printf("%s\n", bufStatus);
     std::cout << std::endl; // For some reason, cin is echoing what I'm typing, which is annoying
-    cout << "Input: ";
+    std::cout << "Input: ";
 }
