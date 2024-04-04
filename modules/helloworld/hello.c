@@ -3,7 +3,7 @@
 #include <linux/kernel.h> /* printk() */
 
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_AUTHOR("Marguerite Doman");
+MODULE_AUTHOR("Marguerite Doman"); /* This had weird quote symbols from the instruction document */
 
 static int hello_init(void) {
   printk("<1> Hello world!\n");
