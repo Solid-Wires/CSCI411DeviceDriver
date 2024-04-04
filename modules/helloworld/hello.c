@@ -3,7 +3,7 @@
 #include <linux/kernel.h> /* printk() */
 
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_AUTHOR(“Marguerite Doman”)
+MODULE_AUTHOR(“Marguerite Doman”);
 
 static int hello_init(void) {
   printk("<1> Hello world!\n");
