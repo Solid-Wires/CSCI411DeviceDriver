@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <iostream>
 
 int main() 
 {
@@ -10,9 +11,9 @@ int main()
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
     // I've allowed entering anything into the writer
-    cout << "Write into the device: ";
+    std::cout << "Write into the device: ";
     char* toWrite;
-    cin >> toWrite;
+    std::cin >> toWrite;
 
     // Write into that device file
     ssize_t writeTest = write(file, toWrite, 1);
