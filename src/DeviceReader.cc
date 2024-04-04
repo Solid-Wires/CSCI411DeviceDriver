@@ -9,8 +9,11 @@ int main()
     //  we just want to open something and nothing more. RDWR is explicitly stated here though.
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
+    const char* toWrite = "abcdef";
+
     // Write into that device file
-    ssize_t writeTest = write(file, "abcdef", 1);
+    printf(sizeof(toWrite));
+    ssize_t writeTest = write(file, toWrite, sizeof(toWrite));
     char bufStatus[1];
 
     // Read from that device file
