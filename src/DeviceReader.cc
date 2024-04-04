@@ -10,7 +10,7 @@ int main()
     //  we just want to open something and nothing more. RDWR is explicitly stated here though.
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
-    const char* toWrite = "Jared";
+    const char* toWrite = "Jared"; // Tried allowing cin, but it was being painful today
 
     // Write into that device file
     ssize_t writeTest = write(file, toWrite, std::strlen(toWrite));
