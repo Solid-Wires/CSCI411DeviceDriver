@@ -9,8 +9,13 @@ int main()
     //  we just want to open something and nothing more. RDWR is explicitly stated here though.
     int file = open("/dev/memory", O_RDWR | O_NONBLOCK);
 
+    // I've allowed entering anything into the writer
+    cout << "Write into the device: ";
+    char* toWrite;
+    cin >> toWrite;
+
     // Write into that device file
-    ssize_t writeTest = write(file, "Jared", 1);
+    ssize_t writeTest = write(file, toWrite, 1);
     char bufStatus[1];
 
     // Read from that device file
