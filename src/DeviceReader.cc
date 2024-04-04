@@ -14,7 +14,6 @@ int main()
     std::cout << "Write into the device: ";
     char toWrite[60];
     std::cin >> toWrite;
-    std::cout << std::flush;
 
     // Write into that device file
     ssize_t writeTest = write(file, toWrite, 1);
@@ -25,5 +24,6 @@ int main()
 
     // Close the device file
     close(file);
+    std::cout << std::endl; // For some reason, cin is echoing what I'm typing, which is annoying
     printf("%s\n", bufStatus);
 }
